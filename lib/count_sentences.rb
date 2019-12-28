@@ -1,20 +1,25 @@
 require 'pry'
-
 class String
-
-  def sentence?
+    attr_accessor :name, :text
     
-  end
-
-  def question?
-
-  end
-
-  def exclamation?
-
-  end
-
-  def count_sentences
-
-  end
+    text = ("This is a sentence. So is this!")
+    
+    def initialize(name)
+      @name = name
+    end
+    
+    def sentence?(text)
+      return(true) if text.end_with('.')
+    end
+  
+    binding.pry
+    
+    def count_sentences(text)
+      self.sentence?(text)  
+    end
+    
+    def end_with?(end_char)
+      return(true) if (text.last == end_char)
+    end
 end
+
